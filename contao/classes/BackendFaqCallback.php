@@ -24,7 +24,7 @@ namespace ContaoBackendFaq;
 class BackendFaqCallback extends \System {
 	private $arrModules    = null;
 
-	public function addBackendFaq($arrModules, $blnShowAll) {
+    public function addBackendFaq($arrModules, $blnShowAll) {
 		$this->arrModules = $arrModules;
 
 		if ($this->addFaqCategories() === false) {
@@ -35,17 +35,18 @@ class BackendFaqCallback extends \System {
 	}
 
 	private function addFaqCategories() {
+        $db = \Database::getInstance();
 
-		if (!$this->Database->fieldExists('backendCategory', 'tl_faq_category')) {
+		if (!$db->fieldExists('backendCategory', 'tl_faq_category')) {
 			return false;
 		}
 
-		$result = $this->Database->prepare("SELECT * FROM tl_faq_category WHERE backendCategory = ? ORDER BY title")
-			->execute('1');
+		$result = $db->prepare("SELECT * FROM tl_faq_category WHERE backendCategory = ? ORDER BY title")->execute('1');
 
 		if ($result->numRows === 0) {
 			return false;
 		}
+
 		unset($this->arrModules['faq_be']['modules']['backend_faq']);
 
 		while($result->next()) {			
@@ -61,3 +62,4 @@ class BackendFaqCallback extends \System {
 	}
 	
 }
+

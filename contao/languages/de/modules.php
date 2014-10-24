@@ -13,6 +13,6 @@
  * @filesource
  */
 
-$GLOBALS['TL_LANG']['MOD']['faq_be']      = array ('FAQ', 'FAQ für Backend-Benutzer');
-$GLOBALS['TL_LANG']['MOD']['backend_faq'] = array ('Backend FAQ', 'FAQ für Backend-Benutzer');
+$GLOBALS['TL_LANG']['MOD']['faq_be']       = array ('FAQ', 'FAQ für Backend-Benutzer');
+$GLOBALS['TL_LANG']['MOD']['backend_faq']  = array ('Backend FAQ', 'FAQ für Backend-Benutzer');
 

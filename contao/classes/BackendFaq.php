@@ -69,8 +69,8 @@ class BackendFaq extends \BackendModule {
 		$objTemplate->author   = $objFaq->author;
 
 		$objTemplate->question = $objFaq->question;
-		$objFaq->answer        = \String::toHtml5($objFaq->answer);
-		$objTemplate->answer   = \String::encodeEmail($objFaq->answer);
+		$objFaq->answer        = \StringUtil::toHtml5($objFaq->answer);
+		$objTemplate->answer   = \StringUtil::encodeEmail($objFaq->answer);
 		
 		$intImgMaxWidth        = 700;
 		// Add image
